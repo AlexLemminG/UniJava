@@ -132,7 +132,7 @@ public class Game implements Runnable{
         o.setLocalAV(Math.random());
 
 
-        for(int i = 0; i < 3; i++){
+        for(int i = 0; i < 6; i++){
             o = new GObject(o);
             o.setGlobalPos(new P2d(800 + i * 100, 500 ));
             o.setMass(1000);
