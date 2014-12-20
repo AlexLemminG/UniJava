@@ -15,8 +15,8 @@ public class BasicScreen extends JFrame{
         panel = new BasicCanvas();
         add(panel);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
-        setExtendedState(MAXIMIZED_BOTH);
+//        setUndecorated(true);
+//        setExtendedState(MAXIMIZED_BOTH);
         setSize(500, 500);
         setFocusable(true);
         requestFocus();

@@ -60,7 +60,7 @@ public class Game implements Runnable{
         input.applyControl();
         world.update(0.05);
 //        sr.projection.setScale(sr.projection.getScale() + 0.001);
-
+        sr.setPosition(a.getGlobalPos().minus(new P2d(300, 300)));
         render();
 
     }
@@ -106,15 +106,15 @@ public class Game implements Runnable{
 
         world = new World();
         screen.panel.addMouseListener(new InputAll());
-        for(int i = 0; i < 10; i++) {
-            GObject o = new GObject(world);
-            o.setGlobalPos(new P2d(100 + Math.random() * 200 ,100 +  Math.random() * 200 ));
-            o.setMass(10);
-            o.getPhysicsObj().setPhysicsType(PhysicsType.PHYSICAL);
-//            triangle.setShape(new PolygonShape(-10, -10, 10, -10, 0, 10));
-            o.setShape(new Circle(P2d.ZERO, 10));
-            o.setLocalV(new P2d((Math.random() - .5) * 100, (Math.random() - .5) * 100));
-        }
+//        for(int i = 0; i < 0; i++) {
+//            GObject o = new GObject(world);
+//            o.setGlobalPos(new P2d(100 + Math.random() * 200 ,100 +  Math.random() * 200 ));
+//            o.setMass(10);
+//            o.getPhysicsObj().setPhysicsType(PhysicsType.PHYSICAL);
+////            triangle.setShape(new PolygonShape(-10, -10, 10, -10, 0, 10));
+//            o.setShape(new Circle(P2d.ZERO, 10));
+//            o.setLocalV(new P2d((Math.random() - .5) * 100, (Math.random() - .5) * 100));
+//        }
 
 //        Wall wall = new Wall(world, new PolygonShape(   -200, -200,
 //                                            -200, 200,
@@ -132,27 +132,27 @@ public class Game implements Runnable{
         o.setLocalAV(Math.random());
 
 
-        for(int i = 0; i < 2; i++){
+        for(int i = 0; i < 25; i++){
             o = new GObject(o);
             o.setGlobalPos(new P2d(800 + i * 100, 500 ));
             o.setMass(1000);
             o.getPhysicsObj().setPhysicsType(PhysicsType.PHYSICAL);
             o.setShape(new Circle(P2d.ZERO, 10));
-            o.setLocalAV(Math.random());
+            o.setLocalAV(Math.random() * 0.1);
         }
 
 
         PolygonShape shapeA = new PolygonShape(-100, 10, -100, -10, 0, 0);
-        PolygonShape shapeB = new PolygonShape(-100, 10, -100, -10, 0, 0);
+//        PolygonShape shapeB = new PolygonShape(-100, 10, -100, -10, 0, 0);
         a = new GObject(world, shapeA);
-        GObject b = new GObject(world, shapeB);
+//        GObject b = new GObject(world, shapeB);
         a.setLocalA(Math.PI / 2);
         a.setMass(10000);
-
+//
         a.setGlobalPos(new P2d(190, 230));
-        b.setGlobalPos(new P2d(200, 200));
+//        b.setGlobalPos(new P2d(200, 200));
         a.getPhysicsObj().setPhysicsType(PhysicsType.PHYSICAL);
-        b.getPhysicsObj().setPhysicsType(PhysicsType.PHYSICAL);
+//        b.getPhysicsObj().setPhysicsType(PhysicsType.PHYSICAL);
 
 
         input = new PlayerControl(a);

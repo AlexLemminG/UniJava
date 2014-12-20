@@ -269,8 +269,7 @@ public class GObject extends Cont{
         if((Boolean) Game.settings.get("render V")){
             getGlobalV().renderAt(sr, getGlobalPos());
         }
-
-        for(Cont child : getAllChildren()){
+        for(Cont child : getChildren()){
             if(child instanceof GObject){
                 ((GObject)child).renderShape(sr);
             }

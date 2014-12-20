@@ -84,7 +84,6 @@ public class Cont implements Comparable<Cont>{
 
     public Cont(Cont parent) {
         this();
-        setParent(parent);
     }
 
 
