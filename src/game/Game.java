@@ -106,7 +106,7 @@ public class Game implements Runnable{
 
         world = new World();
         screen.panel.addMouseListener(new InputAll());
-        for(int i = 0; i < 0; i++) {
+        for(int i = 0; i < 10; i++) {
             GObject o = new GObject(world);
             o.setGlobalPos(new P2d(100 + Math.random() * 200 ,100 +  Math.random() * 200 ));
             o.setMass(10);
@@ -132,7 +132,7 @@ public class Game implements Runnable{
         o.setLocalAV(Math.random());
 
 
-        for(int i = 0; i < 6; i++){
+        for(int i = 0; i < 2; i++){
             o = new GObject(o);
             o.setGlobalPos(new P2d(800 + i * 100, 500 ));
             o.setMass(1000);
