@@ -53,6 +53,7 @@ public class InputAll implements KeyListener, MouseListener{
     public void mousePressed(MouseEvent e) {
         isMouseDown[e.getButton()] = true;
         lastPressedWorldP2d[e.getButton()] = Game.sr.projection.screenToWorldP2d(new P2d(e.getX(), e.getY()));
+        Game.world.getAllAtPos(lastPressedWorldP2d[e.getButton()]);
         Log.print(""+lastPressedWorldP2d[e.getButton()]);
     }
 

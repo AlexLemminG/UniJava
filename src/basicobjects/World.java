@@ -171,4 +171,26 @@ public class World extends GObject{
         }
         return result;
     }
+
+    //не возвращает родителей детей
+    public LinkedList<GObject> getAllAtPos(P2d pos){
+        LinkedList<GObject> preResult = quadTree.getIntersection(new AABB(pos, pos), 0);
+        LinkedList<GObject> result = new LinkedList<GObject>();
+        for(GObject gObject : preResult){
+            if(gObject.getShape().contains(pos)){
+                result.add(gObject);
+            }
+        }
+        wi:while(true) {
+            for(int i = 0; i < result.size(); i++) {
+                GObject temp = result.get(i);
+                if (result.contains(temp.parent)) {
+                    result.remove(temp.parent);
+                    continue wi;
+                }
+            }
+            break;
+        }
+        return result;
+    }
 }
