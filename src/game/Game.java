@@ -113,7 +113,7 @@ public class Game implements Runnable{
         screen.panel.addMouseListener(new InputAll());
 
 
-        PolygonShape shapeA = new PolygonShape(-40, 10, -40, -10, 0, 0);
+        PolygonShape shapeA = new PolygonShape(-400, 10, -400, -10, 0, 0);
         shapeA.setOriginPos(new P2d(-20,0));
         a = new GObject(world, shapeA);
         a.setLocalA(Math.PI / 2);
