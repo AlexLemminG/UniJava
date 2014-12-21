@@ -13,6 +13,7 @@ public class ShapeRenderer {
     public ProjectionMatrix projection;
     private Color lineColor;
     Graphics2D g2d;
+    P2d center = new P2d();
 
 
     public void line(P2d a, P2d b){
@@ -73,7 +74,13 @@ public class ShapeRenderer {
     }
 
     public void setPosition(P2d position) {
+        position = position.minus(center);
         projection.setPosition(position.minus(new P2d(0, -Game.game.screen.getHeight())));
         projection.setPosition(position.minus(new P2d(0, 0)));
+    }
+
+    public void setDimentions(int width, int height) {
+        center.set(width / 2, height / 2);
+
     }
 }
